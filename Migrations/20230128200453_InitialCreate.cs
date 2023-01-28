@@ -22,6 +22,21 @@ namespace projetoinoa.Migrations
                 {
                     table.PrimaryKey("PK_Moeda", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Monitoramento",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: false),
+                    Id1 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Id2 = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Monitoramento", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -29,6 +44,9 @@ namespace projetoinoa.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Moeda");
+
+            migrationBuilder.DropTable(
+                name: "Monitoramento");
         }
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace projetoinoa.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230128195003_InitialCreate")]
+    [Migration("20230128200453_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,6 +31,27 @@ namespace projetoinoa.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Moeda");
+                });
+
+            modelBuilder.Entity("MvcMonitoramento.Models.Monitoramento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Id1")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Id2")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Monitoramento");
                 });
 #pragma warning restore 612, 618
         }
