@@ -52,13 +52,17 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.3, )"
             },
-            "Quartz": {
+            "Quartz.Extensions.Hosting": {
               "target": "Package",
-              "version": "[3.0.6, )"
+              "version": "[3.5.0, )"
             }
           },
           "imports": [

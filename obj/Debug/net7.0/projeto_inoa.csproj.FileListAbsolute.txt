@@ -300,3 +300,6 @@ D:\Documentos - Usuario\Desktop\projeto_inoa\obj\Debug\net7.0\refint\projeto_ino
 D:\Documentos - Usuario\Desktop\projeto_inoa\obj\Debug\net7.0\projeto_inoa.pdb
 D:\Documentos - Usuario\Desktop\projeto_inoa\obj\Debug\net7.0\projeto_inoa.genruntimeconfig.cache
 D:\Documentos - Usuario\Desktop\projeto_inoa\obj\Debug\net7.0\ref\projeto_inoa.dll
+D:\Documentos - Usuario\Desktop\projeto_inoa\bin\Debug\net7.0\Quartz.dll
+D:\Documentos - Usuario\Desktop\projeto_inoa\bin\Debug\net7.0\Quartz.Extensions.DependencyInjection.dll
+D:\Documentos - Usuario\Desktop\projeto_inoa\bin\Debug\net7.0\Quartz.Extensions.Hosting.dll
