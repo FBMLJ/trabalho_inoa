@@ -11,13 +11,11 @@ public class Monitoramento
 
 
 
-    public int MoedaId1 { get; set; }
-    [ForeignKey("MoedaId1")]
-    public Moeda Moeda1 { get; set;}
+    public int MoedaOrigemId { get; set; }
+   
 
-    public int MoedaId2 { get; set; }
-    [ForeignKey("MoedaId2")]
-    public Moeda Moeda2 { get; set;}
+    public int MoedaAlvoId { get; set; }
+    
 
     
     

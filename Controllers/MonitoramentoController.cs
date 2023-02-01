@@ -55,7 +55,7 @@ namespace projeto_inoa.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Id1,Id2")] Monitoramento monitoramento)
+        public async Task<IActionResult> Create([Bind("Id,Nome,MoedaOrigemId,MoedaAlvoId,ValorDeVenda,ValorDeCompra")] Monitoramento monitoramento)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace projeto_inoa.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Id1,Id2")] Monitoramento monitoramento)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,MoedaOrigemId,MoedaAlvoId,ValorDeVenda,ValorDeCompra")] Monitoramento monitoramento)
         {
             if (id != monitoramento.Id)
             {

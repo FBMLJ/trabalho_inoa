@@ -15,12 +15,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            @* <th>
-                @Html.DisplayNameFor(model => model.Id1)
+            <th>
+                @Html.DisplayNameFor(model => model.MoedaOrigemId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Id2)
-            </th> *@
+                @Html.DisplayNameFor(model => model.MoedaAlvoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDeVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorDeCompra)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -30,12 +36,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
-            @* <td>
-                @Html.DisplayFor(modelItem => item.Id1)
+            <td>
+                @Html.DisplayFor(modelItem => item.MoedaOrigemId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Id2)
-            </td> *@
+                @Html.DisplayFor(modelItem => item.MoedaAlvoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDeVenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorDeCompra)
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

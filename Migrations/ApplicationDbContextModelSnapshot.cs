@@ -36,10 +36,10 @@ namespace projetoinoa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("MoedaId1")
+                    b.Property<int>("MoedaAlvoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("MoedaId2")
+                    b.Property<int>("MoedaOrigemId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
@@ -54,30 +54,7 @@ namespace projetoinoa.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MoedaId1");
-
-                    b.HasIndex("MoedaId2");
-
                     b.ToTable("Monitoramento");
-                });
-
-            modelBuilder.Entity("MvcMonitoramento.Models.Monitoramento", b =>
-                {
-                    b.HasOne("MvcMoeda.Models.Moeda", "Moeda1")
-                        .WithMany()
-                        .HasForeignKey("MoedaId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MvcMoeda.Models.Moeda", "Moeda2")
-                        .WithMany()
-                        .HasForeignKey("MoedaId2")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Moeda1");
-
-                    b.Navigation("Moeda2");
                 });
 #pragma warning restore 612, 618
         }

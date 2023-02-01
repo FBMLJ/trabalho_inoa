@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace projetoinoa.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230128200453_InitialCreate")]
+    [Migration("20230131133123_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -39,15 +39,21 @@ namespace projetoinoa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Id1")
+                    b.Property<int>("MoedaAlvoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Id2")
+                    b.Property<int>("MoedaOrigemId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<float>("ValorDeCompra")
+                        .HasColumnType("REAL");
+
+                    b.Property<float>("ValorDeVenda")
+                        .HasColumnType("REAL");
 
                     b.HasKey("Id");
 

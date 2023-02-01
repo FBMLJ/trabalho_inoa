@@ -30,8 +30,10 @@ namespace projetoinoa.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: false),
-                    Id1 = table.Column<int>(type: "INTEGER", nullable: false),
-                    Id2 = table.Column<int>(type: "INTEGER", nullable: false)
+                    MoedaOrigemId = table.Column<int>(type: "INTEGER", nullable: false),
+                    MoedaAlvoId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ValorDeVenda = table.Column<float>(type: "REAL", nullable: false),
+                    ValorDeCompra = table.Column<float>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
