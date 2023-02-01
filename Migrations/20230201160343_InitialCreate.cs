@@ -32,8 +32,8 @@ namespace projetoinoa.Migrations
                     Nome = table.Column<string>(type: "TEXT", nullable: false),
                     MoedaOrigemId = table.Column<int>(type: "INTEGER", nullable: false),
                     MoedaAlvoId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ValorDeVenda = table.Column<float>(type: "REAL", nullable: false),
-                    ValorDeCompra = table.Column<float>(type: "REAL", nullable: false)
+                    ValorDeVenda = table.Column<double>(type: "REAL", nullable: false),
+                    ValorDeCompra = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {

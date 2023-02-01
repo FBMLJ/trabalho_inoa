@@ -46,10 +46,10 @@ namespace projetoinoa.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<float>("ValorDeCompra")
+                    b.Property<double>("ValorDeCompra")
                         .HasColumnType("REAL");
 
-                    b.Property<float>("ValorDeVenda")
+                    b.Property<double>("ValorDeVenda")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");

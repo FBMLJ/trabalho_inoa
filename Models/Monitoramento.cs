@@ -1,4 +1,5 @@
 
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using MvcMoeda.Models;
 
@@ -20,9 +21,10 @@ public class Monitoramento
     
     
    
+    [DisplayName("Limite do Valor de Venda")]
+    public double ValorDeVenda {get ; set;}
 
-    public float ValorDeVenda {get ; set;}
-
-    public float ValorDeCompra {get; set;}
+    [DisplayName("Limite do Valor de Compra")]
+    public double ValorDeCompra {get; set;}
 
 }

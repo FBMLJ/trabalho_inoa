@@ -21,7 +21,8 @@ namespace projeto_inoa.Controllers
         // GET: Monitoramento
         public async Task<IActionResult> Index()
         {
-              return _context.Monitoramento != null ? 
+            ViewBag.Moedas =  _context.Moeda.ToList();
+            return _context.Monitoramento != null ? 
                           View(await _context.Monitoramento.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Monitoramento'  is null.");
         }
@@ -47,6 +48,7 @@ namespace projeto_inoa.Controllers
         // GET: Monitoramento/Create
         public IActionResult Create()
         {
+             ViewBag.Moedas =  _context.Moeda.ToList();
             return View();
         }
 
@@ -79,6 +81,7 @@ namespace projeto_inoa.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Moedas =  _context.Moeda.ToList();
             return View(monitoramento);
         }
 

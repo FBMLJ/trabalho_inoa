@@ -1,7 +1,10 @@
+@using MvcMoeda.Models
 @model MvcMonitoramento.Models.Monitoramento
+
 
 @{
     ViewData["Title"] = "Create";
+    var moedas = (IEnumerable<Moeda>) ViewData["Moedas"];
 }
 
 <h1>Create</h1>
@@ -18,14 +21,25 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
+
                 <label asp-for="MoedaOrigemId" class="control-label"></label>
-                <input asp-for="MoedaOrigemId" class="form-control" />
-                <span asp-validation-for="MoedaOrigemId" class="text-danger"></span>
+                <select name="MoedaOrigemId" id="MoedaOrigemId">
+                    
+                    @foreach (var moeda in moedas){
+                        <option value="@moeda.Id">@moeda.Nome</option>
+                    }
+                </select>
             </div>
+
             <div class="form-group">
+
                 <label asp-for="MoedaAlvoId" class="control-label"></label>
-                <input asp-for="MoedaAlvoId" class="form-control" />
-                <span asp-validation-for="MoedaAlvoId" class="text-danger"></span>
+                <select name="MoedaAlvoId" id="MoedaAlvoId">
+                    
+                    @foreach (var moeda in moedas){
+                        <option value="@moeda.Id">@moeda.Nome</option>
+                    }
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="ValorDeVenda" class="control-label"></label>

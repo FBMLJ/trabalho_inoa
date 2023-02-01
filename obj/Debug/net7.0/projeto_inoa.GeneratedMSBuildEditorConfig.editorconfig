@@ -9,77 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = projeto_inoa
 build_property.RootNamespace = projeto_inoa
-build_property.ProjectDir = d:\Documentos - Usuario\Desktop\projeto_inoa\
+build_property.ProjectDir = D:\Documentos - Usuario\Desktop\projeto_inoa\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\Documentos - Usuario\Desktop\projeto_inoa
+build_property.MSBuildProjectDirectory = D:\Documentos - Usuario\Desktop\projeto_inoa
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Home/Index.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Home/Privacy.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Create.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9lZGFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Delete.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9lZGFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Details.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9lZGFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Edit.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9lZGFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Index.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Moedas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9lZGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Create.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uaXRvcmFtZW50b1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Delete.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uaXRvcmFtZW50b1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Details.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uaXRvcmFtZW50b1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Edit.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uaXRvcmFtZW50b1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Index.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Monitoramento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uaXRvcmFtZW50b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Shared/Error.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/_ViewImports.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/_ViewStart.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Documentos - Usuario/Desktop/projeto_inoa/Views/Shared/_Layout.cshtml]
+[D:/Documentos - Usuario/Desktop/projeto_inoa/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-eg536eclky
