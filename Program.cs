@@ -19,10 +19,13 @@ builder.Services.AddQuartz(q =>
         .ForJob(jobKey)
         .WithIdentity("SendEmailJob-trigger")
          //This Cron interval can be described as "run every minute" (when second is zero)
-        .WithCronSchedule("0,30 * * ? * *")
+        .WithCronSchedule("0,10,20,30,40,50 * * ? * *")
     );
 });
+builder.Services.AddScoped<SendEmailJob>();
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
+
+builder.Services.AddScoped<SendEmailJob>();
 
 var app = builder.Build();
 
