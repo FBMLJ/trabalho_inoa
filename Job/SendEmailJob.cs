@@ -10,27 +10,40 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMoeda.Models;
 using MvcMonitoramento.Models;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 public class SendEmailJob : IJob
 {
     ApplicationDbContext _context;
+    private static readonly HttpClient client = new HttpClient();
 
 
     public SendEmailJob( ApplicationDbContext context){
         _context = context; 
     }
-    public Task Execute(IJobExecutionContext context)
+    public async Task Execute(IJobExecutionContext context)
     {
         // Console.WriteLine("TESTE ");
+        
          var moedas = (IEnumerable<Moeda>)  _context.Moeda.ToList();
         var monitoramentos = (IEnumerable<Monitoramento>)  _context.Monitoramento.ToList();
+
         foreach (var monitoramento in monitoramentos){
 
-            Console.WriteLine(moeda.First(x => x.Id == monitoramento.MoedaOrigemId));
+            var moedaOrigem = moedas.First(x => x.Id == monitoramento.MoedaOrigemId).Nome;
+            var moedaAlvo = moedas.First(x => x.Id == monitoramento.MoedaAlvoId).Nome;
+            var response = await client.GetAsync("https://economia.awesomeapi.com.br/last/"+moedaOrigem+"-"+moedaAlvo+"");
+
+            var responseString = await response.Content.ReadAsStringAsync();
+            JObject json_response = JObject.Parse(responseString);
+            var valorAtual = json_response[moedaOrigem+moedaAlvo]["bid"];
+            Console.WriteLine(valorAtual);
+            
 
         }
 
-        return Task.FromResult(true);
+        return ;
         string to = "lucastavasousa@gmail.com";
         string from = "lucastavateste@gmail.com";
         MailMessage message = new MailMessage(from, to);
@@ -44,6 +57,6 @@ public class SendEmailJob : IJob
             EnableSsl = true,
         };
         smtpClient.Send(from, to, message.Subject, message.Body);
-        return Task.FromResult(true);
+        return;
     }
 }   
