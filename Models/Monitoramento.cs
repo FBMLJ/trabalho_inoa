@@ -22,9 +22,9 @@ public class Monitoramento
     
    
     [DisplayName("Limite do Valor de Venda")]
-    public double ValorDeVenda {get ; set;}
+    public double  ValorDeVenda {get ; set;}
 
     [DisplayName("Limite do Valor de Compra")]
-    public double ValorDeCompra {get; set;}
+    public double  ValorDeCompra {get; set;}
 
 }

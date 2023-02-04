@@ -1,11 +1,14 @@
 @using MvcMoeda.Models
+@using MvcMonitoramento.Models
 @model MvcMonitoramento.Models.Monitoramento
+
 
 @{
     ViewData["Title"] = "Edit";
     var moedas = (IEnumerable<Moeda>) ViewData["Moedas"];
     var monitoramento = Model;
-    Console.WriteLine(monitoramento.MoedaAlvoId);
+    
+    
 }
 
 <h1>Edit</h1>
@@ -57,12 +60,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="ValorDeVenda" class="control-label"></label>
-                <input asp-for="ValorDeVenda" class="form-control" />
+                <input class="form-control" type=numeric data-val=true 
+                data-val-required="The Limite do Valor de Venda field is required." id="ValorDeVenda" name="ValorDeVenda" value=@monitoramento.ValorDeVenda  />
+                
                 <span asp-validation-for="ValorDeVenda" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorDeCompra" class="control-label"></label>
-                <input asp-for="ValorDeCompra" class="form-control" />
+                <input class="form-control" type=numeric data-val=true 
+                data-val-required="The Limite do Valor de Venda field is required." id="ValorDeCompra" name="ValorDeCompra" value=@monitoramento.ValorDeCompra  />
                 <span asp-validation-for="ValorDeCompra" class="text-danger"></span>
             </div>
             <div class="form-group">

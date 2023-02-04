@@ -39,6 +39,8 @@ public class SendEmailJob : IJob
             JObject json_response = JObject.Parse(responseString);
             var valorAtual = json_response[moedaOrigem+moedaAlvo]["bid"];
             Console.WriteLine(valorAtual);
+            Console.WriteLine(monitoramento.ValorDeCompra);
+            Console.WriteLine(monitoramento.ValorDeVenda);
             
 
         }
