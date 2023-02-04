@@ -8,6 +8,7 @@ namespace MvcMonitoramento.Models;
 public class Monitoramento
 {
     public int Id { get; set; }
+     [DisplayName("Endereço de email para envio")]
     public string Nome { get; set; }
 
 

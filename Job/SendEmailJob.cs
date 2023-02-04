@@ -1,16 +1,9 @@
 using System.Net;
 using System.Net.Mail;
 using Quartz;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using MvcMoeda.Models;
 using MvcMonitoramento.Models;
-using System.Net.Http;
+
 using Newtonsoft.Json.Linq;
 
 public class SendEmailJob : IJob
@@ -18,9 +11,16 @@ public class SendEmailJob : IJob
     ApplicationDbContext _context;
     private static readonly HttpClient client = new HttpClient();
 
-
+    public SmtpClient smtpClient;
+    public String emailFrom = "lucastavateste@gmail.com";
     public SendEmailJob( ApplicationDbContext context){
         _context = context; 
+        smtpClient = new SmtpClient("smtp.gmail.com")
+        {
+            Port = 587,
+            Credentials = new NetworkCredential("lucastavateste@gmail.com", "bvzqtaelhifjscpn"),
+            EnableSsl = true,
+        };
     }
     public async Task Execute(IJobExecutionContext context)
     {
@@ -37,28 +37,44 @@ public class SendEmailJob : IJob
 
             var responseString = await response.Content.ReadAsStringAsync();
             JObject json_response = JObject.Parse(responseString);
-            var valorAtual = json_response[moedaOrigem+moedaAlvo]["bid"];
+            String temp = (string)json_response[moedaOrigem+moedaAlvo]["bid"];
+            
+            temp = temp.Replace(".", ",");
+            
+            var valorAtual = float.Parse(temp);
             Console.WriteLine(valorAtual);
             Console.WriteLine(monitoramento.ValorDeCompra);
             Console.WriteLine(monitoramento.ValorDeVenda);
+            if (monitoramento.ValorDeCompra > valorAtual){
+                Console.WriteLine("Enviando Email");
+
+                 smtpClient.Send(emailFrom, monitoramento.Nome, "Aconselhamento sobre a compra do ativo", $@"
+                Conforme o valor de compra de referencia inserido no sistema e o valor da contação {moedaOrigem} para {moedaAlvo}, é recomendado efetuar a compra do ativo.
+                A motivação disso é que o valor de venda atual, {monitoramento.ValorDeCompra}, ser maior que o {valorAtual}.
+                Atenciosamente,
+                Projeto Teste
+                Envio automático. Favor não responder este e-mail. 
+            ");
+
+            }
+
+            if (monitoramento.ValorDeCompra < valorAtual){
+                Console.WriteLine("Enviando Email");
+
+                smtpClient.Send(emailFrom, monitoramento.Nome,"Aconselhamento sobre a venda do ativo ", $@"
+                Conforme o valor de venda de referencia inserido no sistema e o valor da contação {moedaOrigem} para {moedaAlvo}, é recomendado efetuar a venda do ativo.
+                A motivação disso é que que o valor de venda atual, {monitoramento.ValorDeCompra}, ser menor que o {valorAtual}.
+                Atenciosamente,
+                Projeto Teste
+                Envio automático. Favor não responder este e-mail. 
+                ");
+
+            }
+
             
 
         }
 
-        return ;
-        string to = "lucastavasousa@gmail.com";
-        string from = "lucastavateste@gmail.com";
-        MailMessage message = new MailMessage(from, to);
-        message.Subject = "Recomendação da Inoa: Vender";
-        message.Body = @"<p>O valor da contação da moeda X para moeda Y está acima do valor de venda configurado. Nós recomendamos vendê-la o mais breve possível<p>
-        Atenciosamente, Inoa";
-        var smtpClient = new SmtpClient("smtp.gmail.com")
-        {
-            Port = 587,
-            Credentials = new NetworkCredential(from, "bvzqtaelhifjscpn"),
-            EnableSsl = true,
-        };
-        smtpClient.Send(from, to, message.Subject, message.Body);
         return;
     }
 }   
