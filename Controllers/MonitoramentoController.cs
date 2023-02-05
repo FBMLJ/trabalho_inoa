@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,6 +20,7 @@ namespace projeto_inoa.Controllers
         }
 
         // GET: Monitoramento
+        [Route("/")]
         public async Task<IActionResult> Index()
         {
             ViewBag.Moedas =  _context.Moeda.ToList();
@@ -56,7 +58,7 @@ namespace projeto_inoa.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Create([Bind("Id,Nome,MoedaOrigemId,MoedaAlvoId,ValorDeVenda,ValorDeCompra")] Monitoramento monitoramento)
         {
             if (ModelState.IsValid)
@@ -140,7 +142,7 @@ namespace projeto_inoa.Controllers
 
         // POST: Monitoramento/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Monitoramento == null)
@@ -154,7 +156,7 @@ namespace projeto_inoa.Controllers
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return Ok(Json("Operação bem sucedida"));
         }
 
         private bool MonitoramentoExists(int id)

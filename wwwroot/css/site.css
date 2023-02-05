@@ -20,3 +20,68 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+a.add-button {
+  
+  background-color: #258cfb;
+  padding: 15px 20px;
+  border-radius: 30%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  
+  
+}
+
+td, th {
+  text-align: center;
+  
+}
+.div-add-button {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.edit_button {
+  background-color: #fad82f ;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10%;
+  
+}
+
+
+.detalhar_button {
+  background-color: #0cac41 ;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10%;
+  
+}
+
+.excluir_button {
+  background-color: #fa420a ;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10%;
+  
+}
+
+.td-limit{
+  width: 12%;
+}
+
+.action-button:hover {
+  color: white;
+  cursor: pointer
+}
+html{padding-top: 50px;}

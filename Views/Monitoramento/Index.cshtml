@@ -12,9 +12,11 @@
 
 <h1>Listagem Monitoramento</h1>
 
-<p>
-    <a asp-action="Create">Novo Monitoramento</a>
-</p>
+    <div class="div-add-button">
+
+        <a asp-action="Create" class="add-button">+</a>
+    </div>
+
 <table class="table">
     <thead>
         <tr>
@@ -43,26 +45,52 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
-            <td>
+            <td class="td-limit">
                 @moedas.First(c => c.Id == item.MoedaOrigemId).Nome
                 @* @Html.DisplayFor(modelItem => item.MoedaOrigemId) *@
             </td>
-            <td>
+            <td class="td-limit">
                 @moedas.First(c => c.Id == item.MoedaAlvoId).Nome
                 @* @Html.DisplayFor(modelItem => item.MoedaAlvoId) *@
             </td>
-            <td>
+            <td class="td-limit">
                 @Html.DisplayFor(modelItem => item.ValorDeVenda)
             </td>
-            <td>
+            <td class="td-limit">
                 @Html.DisplayFor(modelItem => item.ValorDeCompra)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhar</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                <a asp-action="Edit" class="action-button edit_button" asp-route-id="@item.Id">Editar</a>
+                <a asp-action="Details" class="action-button detalhar_button" asp-route-id="@item.Id">Detalhar</a>
+                <a class="action-button excluir_button" valor-id="@item.Id">Excluir</a>
+                
             </td>
         </tr>
 }
     </tbody>
 </table>
+<script>
+    
+    
+    document.querySelector(".excluir_button").addEventListener("click", (e)=> {
+        const id =  e.target.getAttribute("valor-id");
+        console.log("t")
+        $.ajax({
+        type: "POST",
+        url: '@Url.Action("Delete")'+"/"+id,
+        data: {Id: id},
+
+        header: "Content-Type:application/json",
+        success: function (data) {
+            @* console.log(data); *@
+            e.target.parentElement.parentElement.remove()
+        },
+        
+        
+        error: function(err){
+            console.log(err);
+        }
+        })
+
+    })
+</script>
