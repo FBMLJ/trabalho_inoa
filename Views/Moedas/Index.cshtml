@@ -6,9 +6,10 @@
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="div-add-button">
+
+        <a asp-action="Create" class="add-button">+</a>
+    </div>
 <table class="table">
     <thead>
         <tr>
@@ -21,15 +22,40 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td style="width: 80%">
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit"  class="action-button detalhar_button" asp-route-id="@item.Id">Editar</a> 
+               
+                  <a class="action-button excluir_button" valor-id="@item.Id">Excluir</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<script>
+
+    document.querySelector(".excluir_button").addEventListener("click", (e)=> {
+        const id =  e.target.getAttribute("valor-id");
+        console.log("t")
+        $.ajax({
+        type: "POST",
+        url: '@Url.Action("Delete")'+"/"+id,
+        data: {Id: id},
+
+        header: "Content-Type:application/json",
+        success: function (data) {
+            @* console.log(data); *@
+            e.target.parentElement.parentElement.remove()
+        },
+        
+        
+        error: function(err){
+            console.log(err);
+        }
+        })
+
+    })
+</script>

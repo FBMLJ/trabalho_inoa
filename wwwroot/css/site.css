@@ -59,6 +59,7 @@ td, th {
 .detalhar_button {
   background-color: #0cac41 ;
   color: white;
+  border: none;
   padding: 5px 5px;
   text-decoration: none;
   font-weight: bold;
@@ -85,3 +86,31 @@ td, th {
   cursor: pointer
 }
 html{padding-top: 50px;}
+
+
+.form-group{
+  margin: 20px 0;
+}
+
+.div-flex-itens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.div-flex-itens .form-group{
+  display: flex;
+  flex-direction: column;
+  
+  
+
+}
+.submits-button{
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.submits-button a{
+  margin-left: 20px;
+}

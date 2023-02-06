@@ -60,8 +60,8 @@
                 @Html.DisplayFor(modelItem => item.ValorDeCompra)
             </td>
             <td>
-                <a asp-action="Edit" class="action-button edit_button" asp-route-id="@item.Id">Editar</a>
-                <a asp-action="Details" class="action-button detalhar_button" asp-route-id="@item.Id">Detalhar</a>
+                <a asp-action="Edit" class="action-button detalhar_button" asp-route-id="@item.Id">Editar</a>
+                @* <a asp-action="Details" class="action-button detalhar_button" asp-route-id="@item.Id">Detalhar</a> *@
                 <a class="action-button excluir_button" valor-id="@item.Id">Excluir</a>
                 
             </td>

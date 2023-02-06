@@ -12,10 +12,11 @@ public class Monitoramento
     public string Nome { get; set; }
 
 
-
+     [DisplayName("Moeda de Origem")]
     public int MoedaOrigemId { get; set; }
    
 
+    [DisplayName("Moeda de Destino")]
     public int MoedaAlvoId { get; set; }
     
 

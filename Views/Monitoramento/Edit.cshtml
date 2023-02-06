@@ -4,16 +4,18 @@
 
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
     var moedas = (IEnumerable<Moeda>) ViewData["Moedas"];
     var monitoramento = Model;
     
     
 }
 
-<h1>Edit</h1>
-
-<h4>Monitoramento</h4>
+<h1>Editar</h1>
+<div style="display: flex;  justify-content: space-between;">
+    <h4>Monitoramento</h4>
+    <a class=" action-button detalhar_button" href="/Moedas">Criar Moeda</a>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -25,38 +27,40 @@
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="div-flex-itens">
+                <div class="form-group">
 
-                <label asp-for="MoedaOrigemId" class="control-label"></label>
-                <select name="MoedaOrigemId" id="MoedaOrigemId">
-                    
-                    @foreach (var moeda in moedas){
-                        @if (monitoramento.MoedaOrigemId == moeda.Id) {
+                    <label asp-for="MoedaOrigemId" class="control-label"></label>
+                    <select name="MoedaOrigemId" id="MoedaOrigemId">
+                        
+                        @foreach (var moeda in moedas){
+                            @if (monitoramento.MoedaOrigemId == moeda.Id) {
 
-                            <option value="@moeda.Id" selected="true">@moeda.Nome</option> 
-                        } else
-                        {
-                            <option value="@moeda.Id" >@moeda.Nome</option> 
+                                <option value="@moeda.Id" selected="true">@moeda.Nome</option> 
+                            } else
+                            {
+                                <option value="@moeda.Id" >@moeda.Nome</option> 
+                            }
                         }
-                    }
-                </select>
-            </div>
+                    </select>
+                </div>
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <label asp-for="MoedaAlvoId" class="control-label"></label>
-                <select name="MoedaAlvoId" id="MoedaAlvoId">
-                    
-                    @foreach (var moeda in moedas){
-                        @if (monitoramento.MoedaAlvoId == moeda.Id) {
+                    <label asp-for="MoedaAlvoId" class="control-label"></label>
+                    <select name="MoedaAlvoId" id="MoedaAlvoId">
+                        
+                        @foreach (var moeda in moedas){
+                            @if (monitoramento.MoedaAlvoId == moeda.Id) {
 
-                            <option value="@moeda.Id" selected="true">@moeda.Nome</option> 
-                        } else
-                        {
-                            <option value="@moeda.Id" >@moeda.Nome</option> 
+                                <option value="@moeda.Id" selected="true">@moeda.Nome</option> 
+                            } else
+                            {
+                                <option value="@moeda.Id" >@moeda.Nome</option> 
+                            }
                         }
-                    }
-                </select>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="ValorDeVenda" class="control-label"></label>
@@ -71,16 +75,15 @@
                 data-val-required="The Limite do Valor de Venda field is required." id="ValorDeCompra" name="ValorDeCompra" value=@monitoramento.ValorDeCompra  />
                 <span asp-validation-for="ValorDeCompra" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="form-group  submits-button">
+                <input type="submit" value="Salvar" class="detalhar_button" />
+                 <a asp-action="Index" class=" action-button excluir_button">Voltar</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
